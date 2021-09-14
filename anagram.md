@@ -51,6 +51,44 @@ For each character, we check if the character already exist as a property in the
 
 In the end, we return charMap which is the character map object.
 
-## Comparing Character
+## Comparing Character Maps
 
-Maps Now that we have a way of generating the character maps, the next step will be to compare the character maps for both strings as shown in code.
+Now that we have a way of generating the character maps, the next step will be to compare the character maps for both strings as shown in code.
+
+Notice that we first check if the length of both strings are equal. If they aren't, we return false as this is an indicator that they can never be anagrams. If they are however, we go further to generate their character maps stored as variables stringAMap and stringBMap.
+
+Next, we use the for…in loop to compare every character and value in stringAMap to the character’s corresponding value in stringBMap. If any values do not match, we return false as an indication that the strings aren't anagrams. However, if all values match, the test is passed and we return true as an indication that the tested strings are anagrams indeed.
+
+We made it. A longer implementation indeed but it's definitely a more explanatory one.
+
+## Testing Correctness with Jest
+
+To test each solution above, run the following command from your terminal:
+
+npm run test isAnagram
+
+- Direct Comparison
+- Character Map Comparison
+
+It appears we always do great! We passed all tests.
+
+## Testing Performance with JSPerf
+
+Here, we run a performance test to determine which solution is faster. Find a screenshot of the result below:
+
+From the result, we observe that:
+
+The faster implementation is the Character Map Comparison approach and the Direct Comparison method though concise is approximately 52% slower.
+
+**Surprising isn’t it? The metrics never lie though!**
+
+## Practical Application
+
+The algorithms explored above may be applied in various ways. These include:
+
+- Encryption
+- Password Generation
+- Trusted Time-stamping
+- Coding Interviews
+- Generating Mnemonics
+- Word games
